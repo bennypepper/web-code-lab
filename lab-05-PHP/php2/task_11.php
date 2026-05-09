@@ -14,9 +14,9 @@
         <?php
         $cars = array (
             array("BYD",10,80),
-            array("NIO",20,40),
+            array("AION",20,40),
             array("XPeng",20,10),
-            array("Li Auto",50,35)
+            array("Geely",50,35)
         );
 
         function setColor($sales_percent) {
@@ -31,10 +31,7 @@
             $in_stock = $cars[$x][1];
             $sold = $cars[$x][2];
             $percent = ($in_stock > 0) ? round(($sold / $in_stock) * 100) : 0;
-            // using the max percentage formula if needed or directly from data
-            // wait, data says Sales = Sold / In Stock ? Wait no, "data in stock", "data sold". 
-            // 'Volvo', 10, 80 means sold 80? That's 800%. Let's assume the data means target and actual, or that's just the percentage.
-            // Oh, Volvo, 10, 80 => In stock 10, sold 80? Data: array("Volvo", 10, 80). Maybe 80 is the percentage. Let's just use data[2] directly as percentage.
+ 
             $percent = $cars[$x][2];
             $color = setColor($percent);
             
